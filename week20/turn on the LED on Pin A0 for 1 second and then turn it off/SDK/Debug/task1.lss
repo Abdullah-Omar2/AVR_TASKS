@@ -7,27 +7,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .data         00000008  00800060  00000ccc  00000d40  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .stab         00000390  00000000  00000000  00000d48  2**2
+  2 .stab         00000420  00000000  00000000  00000d48  2**2
                   CONTENTS, READONLY, DEBUGGING
-  3 .stabstr      000006b5  00000000  00000000  000010d8  2**0
+  3 .stabstr      00000771  00000000  00000000  00001168  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_aranges 00000140  00000000  00000000  0000178d  2**0
+  4 .debug_aranges 00000140  00000000  00000000  000018d9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_pubnames 00000170  00000000  00000000  000018cd  2**0
+  5 .debug_pubnames 00000170  00000000  00000000  00001a19  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001c49  00000000  00000000  00001a3d  2**0
+  6 .debug_info   00001c49  00000000  00000000  00001b89  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000eeb  00000000  00000000  00003686  2**0
+  7 .debug_abbrev 00000eeb  00000000  00000000  000037d2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000dad  00000000  00000000  00004571  2**0
+  8 .debug_line   00000dad  00000000  00000000  000046bd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000160  00000000  00000000  00005320  2**2
+  9 .debug_frame  00000160  00000000  00000000  0000546c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000028d  00000000  00000000  00005480  2**0
+ 10 .debug_str    0000028d  00000000  00000000  000055cc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000007ce  00000000  00000000  0000570d  2**0
+ 11 .debug_loc    000007ce  00000000  00000000  00005859  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000050  00000000  00000000  00005edb  2**0
+ 12 .debug_ranges 00000050  00000000  00000000  00006027  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1455,7 +1455,7 @@ int main (void)
  b44:	de bf       	out	0x3e, r29	; 62
  b46:	0f be       	out	0x3f, r0	; 63
  b48:	cd bf       	out	0x3d, r28	; 61
-	DDRA|=(1<<0);
+	SET_BIT(DDRA,0);
  b4a:	aa e3       	ldi	r26, 0x3A	; 58
  b4c:	b0 e0       	ldi	r27, 0x00	; 0
  b4e:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1464,7 +1464,7 @@ int main (void)
  b54:	81 60       	ori	r24, 0x01	; 1
  b56:	8c 93       	st	X, r24
 
-	PORTA|=(1<<0);
+	SET_BIT(PORTA,0);
  b58:	ab e3       	ldi	r26, 0x3B	; 59
  b5a:	b0 e0       	ldi	r27, 0x00	; 0
  b5c:	eb e3       	ldi	r30, 0x3B	; 59
@@ -1616,7 +1616,7 @@ _delay_loop_2(uint16_t __count)
  c46:	9a 83       	std	Y+2, r25	; 0x02
  c48:	89 83       	std	Y+1, r24	; 0x01
 	_delay_ms(1000);
-	PORTA&=~(1<<0);
+	CLEAR_BIT(PORTA,0);
  c4a:	ab e3       	ldi	r26, 0x3B	; 59
  c4c:	b0 e0       	ldi	r27, 0x00	; 0
  c4e:	eb e3       	ldi	r30, 0x3B	; 59

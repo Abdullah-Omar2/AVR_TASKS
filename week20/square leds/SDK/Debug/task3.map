@@ -357,13 +357,13 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .signature
  *(.signature*)
 
-.stab           0x00000000      0x96c
+.stab           0x00000000      0x9fc
  *(.stab)
- .stab          0x00000000      0x96c ./main.o
+ .stab          0x00000000      0x9fc ./main.o
 
-.stabstr        0x00000000      0x6b5
+.stabstr        0x00000000      0x771
  *(.stabstr)
- .stabstr       0x00000000      0x6b5 ./main.o
+ .stabstr       0x00000000      0x771 ./main.o
 
 .stab.excl
  *(.stab.excl)

@@ -5,7 +5,8 @@
  *      Author: abdullahalazhary
  */
 #include <util/delay.h>
-typedef unsigned char u8;
+#include "STDtypes.h"
+#include "EMBEDDED_functions.h"
 
 #define DDRA *((volatile u8*)0x3A)
 #define PORTA *((volatile u8*)0x3B)
@@ -13,27 +14,25 @@ typedef unsigned char u8;
 
 int main (void)
 {
-	DDRA|=(1<<0);
-	DDRA|=(1<<1);
-	DDRA|=(1<<2);
-	DDRA|=(1<<3);
-	DDRA|=(1<<4);
-	DDRA|=(1<<5);
+	SET_BIT(DDRA,0);
+	SET_BIT(DDRA,1);
+	SET_BIT(DDRA,2);
+	SET_BIT(DDRA,3);
+	SET_BIT(DDRA,4);
+	SET_BIT(DDRA,5);
 
     char var=0;
 	while(1)
 	{
 		for(var=0;var<=5;var++)
 		{
-			PORTA|=(1<<var);
+			SET_BIT(PORTA,var);
 			_delay_ms(100);
-
 		}
 		for(var=0;var<=5;var++)
 		{
-			PORTA&=~(1<<var);
+			CLEAR_BIT(PORTA,var);
 			_delay_ms(100);
-
 		}
 	}
 	return 0;

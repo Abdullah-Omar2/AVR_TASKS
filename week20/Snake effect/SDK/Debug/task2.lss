@@ -7,27 +7,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .data         00000008  00800060  00000e4a  00000ebe  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .stab         000004e0  00000000  00000000  00000ec8  2**2
+  2 .stab         00000570  00000000  00000000  00000ec8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  3 .stabstr      000006bf  00000000  00000000  000013a8  2**0
+  3 .stabstr      0000077b  00000000  00000000  00001438  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_aranges 00000140  00000000  00000000  00001a67  2**0
+  4 .debug_aranges 00000140  00000000  00000000  00001bb3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_pubnames 00000170  00000000  00000000  00001ba7  2**0
+  5 .debug_pubnames 00000170  00000000  00000000  00001cf3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001c49  00000000  00000000  00001d17  2**0
+  6 .debug_info   00001c49  00000000  00000000  00001e63  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000eeb  00000000  00000000  00003960  2**0
+  7 .debug_abbrev 00000eeb  00000000  00000000  00003aac  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000dad  00000000  00000000  0000484b  2**0
+  8 .debug_line   00000dad  00000000  00000000  00004997  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000160  00000000  00000000  000055f8  2**2
+  9 .debug_frame  00000160  00000000  00000000  00005744  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000028d  00000000  00000000  00005758  2**0
+ 10 .debug_str    0000028d  00000000  00000000  000058a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000007ce  00000000  00000000  000059e5  2**0
+ 11 .debug_loc    000007ce  00000000  00000000  00005b31  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000050  00000000  00000000  000061b3  2**0
+ 12 .debug_ranges 00000050  00000000  00000000  000062ff  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1455,7 +1455,7 @@ int main (void)
  b44:	de bf       	out	0x3e, r29	; 62
  b46:	0f be       	out	0x3f, r0	; 63
  b48:	cd bf       	out	0x3d, r28	; 61
-	DDRA|=(1<<0);
+	SET_BIT(DDRA,0);
  b4a:	aa e3       	ldi	r26, 0x3A	; 58
  b4c:	b0 e0       	ldi	r27, 0x00	; 0
  b4e:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1463,7 +1463,7 @@ int main (void)
  b52:	80 81       	ld	r24, Z
  b54:	81 60       	ori	r24, 0x01	; 1
  b56:	8c 93       	st	X, r24
-	DDRA|=(1<<1);
+	SET_BIT(DDRA,1);
  b58:	aa e3       	ldi	r26, 0x3A	; 58
  b5a:	b0 e0       	ldi	r27, 0x00	; 0
  b5c:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1471,7 +1471,7 @@ int main (void)
  b60:	80 81       	ld	r24, Z
  b62:	82 60       	ori	r24, 0x02	; 2
  b64:	8c 93       	st	X, r24
-	DDRA|=(1<<2);
+	SET_BIT(DDRA,2);
  b66:	aa e3       	ldi	r26, 0x3A	; 58
  b68:	b0 e0       	ldi	r27, 0x00	; 0
  b6a:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1479,7 +1479,7 @@ int main (void)
  b6e:	80 81       	ld	r24, Z
  b70:	84 60       	ori	r24, 0x04	; 4
  b72:	8c 93       	st	X, r24
-	DDRA|=(1<<3);
+	SET_BIT(DDRA,3);
  b74:	aa e3       	ldi	r26, 0x3A	; 58
  b76:	b0 e0       	ldi	r27, 0x00	; 0
  b78:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1487,7 +1487,7 @@ int main (void)
  b7c:	80 81       	ld	r24, Z
  b7e:	88 60       	ori	r24, 0x08	; 8
  b80:	8c 93       	st	X, r24
-	DDRA|=(1<<4);
+	SET_BIT(DDRA,4);
  b82:	aa e3       	ldi	r26, 0x3A	; 58
  b84:	b0 e0       	ldi	r27, 0x00	; 0
  b86:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1495,7 +1495,7 @@ int main (void)
  b8a:	80 81       	ld	r24, Z
  b8c:	80 61       	ori	r24, 0x10	; 16
  b8e:	8c 93       	st	X, r24
-	DDRA|=(1<<5);
+	SET_BIT(DDRA,5);
  b90:	aa e3       	ldi	r26, 0x3A	; 58
  b92:	b0 e0       	ldi	r27, 0x00	; 0
  b94:	ea e3       	ldi	r30, 0x3A	; 58
@@ -1512,7 +1512,7 @@ int main (void)
  ba0:	1d 8e       	std	Y+29, r1	; 0x1d
  ba2:	87 c0       	rjmp	.+270    	; 0xcb2 <main+0x17c>
 		{
-			PORTA|=(1<<var);
+			SET_BIT(PORTA,var);
  ba4:	ab e3       	ldi	r26, 0x3B	; 59
  ba6:	b0 e0       	ldi	r27, 0x00	; 0
  ba8:	eb e3       	ldi	r30, 0x3B	; 59
@@ -1674,7 +1674,7 @@ _delay_loop_2(uint16_t __count)
  ca6:	f1 f7       	brne	.-4      	; 0xca4 <main+0x16e>
  ca8:	98 8b       	std	Y+16, r25	; 0x10
  caa:	8f 87       	std	Y+15, r24	; 0x0f
-	DDRA|=(1<<5);
+	SET_BIT(DDRA,5);
 
     char var=0;
 	while(1)
@@ -1688,15 +1688,14 @@ _delay_loop_2(uint16_t __count)
  cb6:	08 f4       	brcc	.+2      	; 0xcba <main+0x184>
  cb8:	75 cf       	rjmp	.-278    	; 0xba4 <main+0x6e>
 		{
-			PORTA|=(1<<var);
+			SET_BIT(PORTA,var);
 			_delay_ms(100);
-
 		}
 		for(var=0;var<=5;var++)
  cba:	1d 8e       	std	Y+29, r1	; 0x1d
  cbc:	88 c0       	rjmp	.+272    	; 0xdce <main+0x298>
 		{
-			PORTA&=~(1<<var);
+			CLEAR_BIT(PORTA,var);
  cbe:	ab e3       	ldi	r26, 0x3B	; 59
  cc0:	b0 e0       	ldi	r27, 0x00	; 0
  cc2:	eb e3       	ldi	r30, 0x3B	; 59
@@ -1853,10 +1852,10 @@ _delay_ms(double __ms)
  dc2:	f1 f7       	brne	.-4      	; 0xdc0 <main+0x28a>
  dc4:	9a 83       	std	Y+2, r25	; 0x02
  dc6:	89 83       	std	Y+1, r24	; 0x01
+		for(var=0;var<=5;var++)
 		{
-			PORTA|=(1<<var);
+			SET_BIT(PORTA,var);
 			_delay_ms(100);
-
 		}
 		for(var=0;var<=5;var++)
  dc8:	8d 8d       	ldd	r24, Y+29	; 0x1d

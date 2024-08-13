@@ -5,7 +5,8 @@
  *      Author: abdullahalazhary
  */
 #include <util/delay.h>
-typedef unsigned char u8;
+#include "STDtypes.h"
+#include "EMBEDDED_functions.h"
 
 #define DDRA *((volatile u8*)0x3A)
 #define PORTA *((volatile u8*)0x3B)
@@ -13,48 +14,48 @@ typedef unsigned char u8;
 
 int main (void)
 {
-	DDRA|=(1<<0);
-	DDRA|=(1<<1);
-	DDRA|=(1<<2);
-	DDRA|=(1<<3);
-	DDRA|=(1<<4);
-	DDRA|=(1<<5);
+	SET_BIT(DDRA,0);
+	SET_BIT(DDRA,1);
+	SET_BIT(DDRA,2);
+	SET_BIT(DDRA,3);
+	SET_BIT(DDRA,4);
+	SET_BIT(DDRA,5);
 
 	while(1)
 	{
 		//D1
-		PORTA&=~(1<<3);
-		PORTA|=(1<<0);
-		PORTA|=(1<<4);
-		PORTA|=(1<<5);
+		CLEAR_BIT(PORTA,3);
+		SET_BIT(PORTA,0);
+		SET_BIT(PORTA,4);
+		SET_BIT(PORTA,5);
 		_delay_ms(500);
 		//D2
-		PORTA&=~(1<<0);
-		PORTA|=(1<<1);
+		CLEAR_BIT(PORTA,0);
+		SET_BIT(PORTA,1);
 		_delay_ms(500);
 		//D3
-		PORTA&=~(1<<1);
-		PORTA|=(1<<2);
+		CLEAR_BIT(PORTA,1);
+		SET_BIT(PORTA,2);
 		_delay_ms(500);
 		//D6
-		PORTA&=~(1<<4);
-		PORTA|=(1<<3);
+		CLEAR_BIT(PORTA,4);
+		SET_BIT(PORTA,3);
 		_delay_ms(500);
 		//D9
-	    PORTA&=~(1<<5);
-		PORTA|=(1<<4);
+		CLEAR_BIT(PORTA,5);
+		SET_BIT(PORTA,4);
 		_delay_ms(500);
 		//D8
-		PORTA&=~(1<<2);
-		PORTA|=(1<<1);
+		CLEAR_BIT(PORTA,2);
+		SET_BIT(PORTA,1);
 		_delay_ms(500);
 		//D7
-		PORTA&=~(1<<1);
-		PORTA|=(1<<0);
+		CLEAR_BIT(PORTA,1);
+		SET_BIT(PORTA,0);
 		_delay_ms(500);
 		//D4
-		PORTA|=(1<<5);
-		PORTA&=~(1<<4);
+		SET_BIT(PORTA,5);
+		CLEAR_BIT(PORTA,4);
 		_delay_ms(500);
 	}
 	return 0;

@@ -32,6 +32,9 @@ endif
 LSS += \
 task2.lss \
 
+FLASH_IMAGE += \
+task2.hex \
+
 SIZEDUMMY += \
 sizedummy \
 
@@ -53,6 +56,12 @@ task2.lss: task2.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
+task2.hex: task2.elf
+	@echo 'Create Flash image (ihex format)'
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex task2.elf  "task2.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: task2.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 task2.elf
@@ -61,10 +70,10 @@ sizedummy: task2.elf
 
 # Other Targets
 clean:
-	-$(RM) $(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) task2.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) task2.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:
