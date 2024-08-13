@@ -20,32 +20,21 @@ int main (void)
 	DDRA|=(1<<4);
 	DDRA|=(1<<5);
 
+    char var=0;
 	while(1)
 	{
-		PORTA|=(1<<0);
-		_delay_ms(100);
-		PORTA|=(1<<1);
-		_delay_ms(100);
-		PORTA|=(1<<2);
-		_delay_ms(100);
-		PORTA|=(1<<3);
-		_delay_ms(100);
-		PORTA|=(1<<4);
-		_delay_ms(100);
-		PORTA|=(1<<5);
-		_delay_ms(100);
-		PORTA&=~(1<<0);
-		_delay_ms(100);
-		PORTA&=~(1<<1);
-		_delay_ms(100);
-		PORTA&=~(1<<2);
-		_delay_ms(100);
-		PORTA&=~(1<<3);
-		_delay_ms(100);
-		PORTA&=~(1<<4);
-		_delay_ms(100);
-		PORTA&=~(1<<5);
-		_delay_ms(100);
+		for(var=0;var<=5;var++)
+		{
+			PORTA|=(1<<var);
+			_delay_ms(100);
+
+		}
+		for(var=0;var<=5;var++)
+		{
+			PORTA&=~(1<<var);
+			_delay_ms(100);
+
+		}
 	}
 	return 0;
 }
