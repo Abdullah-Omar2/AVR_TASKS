@@ -1,0 +1,260 @@
+
+task4.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001d4  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000003f0  00000000  00000000  00000228  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      0000070d  00000000  00000000  00000618  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 e8 00 	jmp	0x1d0	; 0x1d0 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+#define PIND *((volatile u8*)0x30)
+#define DDRD *((volatile u8*)0x31)
+#define PORTD *((volatile u8*)0x32)
+
+int main (void)
+{
+  6c:	df 93       	push	r29
+  6e:	cf 93       	push	r28
+  70:	cd b7       	in	r28, 0x3d	; 61
+  72:	de b7       	in	r29, 0x3e	; 62
+	SET_BIT(DDRA,0);
+  74:	aa e3       	ldi	r26, 0x3A	; 58
+  76:	b0 e0       	ldi	r27, 0x00	; 0
+  78:	ea e3       	ldi	r30, 0x3A	; 58
+  7a:	f0 e0       	ldi	r31, 0x00	; 0
+  7c:	80 81       	ld	r24, Z
+  7e:	81 60       	ori	r24, 0x01	; 1
+  80:	8c 93       	st	X, r24
+	SET_BIT(DDRA,1);
+  82:	aa e3       	ldi	r26, 0x3A	; 58
+  84:	b0 e0       	ldi	r27, 0x00	; 0
+  86:	ea e3       	ldi	r30, 0x3A	; 58
+  88:	f0 e0       	ldi	r31, 0x00	; 0
+  8a:	80 81       	ld	r24, Z
+  8c:	82 60       	ori	r24, 0x02	; 2
+  8e:	8c 93       	st	X, r24
+
+	CLEAR_BIT(DDRB,0);
+  90:	a7 e3       	ldi	r26, 0x37	; 55
+  92:	b0 e0       	ldi	r27, 0x00	; 0
+  94:	e7 e3       	ldi	r30, 0x37	; 55
+  96:	f0 e0       	ldi	r31, 0x00	; 0
+  98:	80 81       	ld	r24, Z
+  9a:	8e 7f       	andi	r24, 0xFE	; 254
+  9c:	8c 93       	st	X, r24
+	CLEAR_BIT(DDRB,1);
+  9e:	a7 e3       	ldi	r26, 0x37	; 55
+  a0:	b0 e0       	ldi	r27, 0x00	; 0
+  a2:	e7 e3       	ldi	r30, 0x37	; 55
+  a4:	f0 e0       	ldi	r31, 0x00	; 0
+  a6:	80 81       	ld	r24, Z
+  a8:	8d 7f       	andi	r24, 0xFD	; 253
+  aa:	8c 93       	st	X, r24
+	CLEAR_BIT(DDRB,2);
+  ac:	a7 e3       	ldi	r26, 0x37	; 55
+  ae:	b0 e0       	ldi	r27, 0x00	; 0
+  b0:	e7 e3       	ldi	r30, 0x37	; 55
+  b2:	f0 e0       	ldi	r31, 0x00	; 0
+  b4:	80 81       	ld	r24, Z
+  b6:	8b 7f       	andi	r24, 0xFB	; 251
+  b8:	8c 93       	st	X, r24
+
+	SET_BIT(PORTB,0);
+  ba:	a8 e3       	ldi	r26, 0x38	; 56
+  bc:	b0 e0       	ldi	r27, 0x00	; 0
+  be:	e8 e3       	ldi	r30, 0x38	; 56
+  c0:	f0 e0       	ldi	r31, 0x00	; 0
+  c2:	80 81       	ld	r24, Z
+  c4:	81 60       	ori	r24, 0x01	; 1
+  c6:	8c 93       	st	X, r24
+	SET_BIT(PORTB,1);
+  c8:	a8 e3       	ldi	r26, 0x38	; 56
+  ca:	b0 e0       	ldi	r27, 0x00	; 0
+  cc:	e8 e3       	ldi	r30, 0x38	; 56
+  ce:	f0 e0       	ldi	r31, 0x00	; 0
+  d0:	80 81       	ld	r24, Z
+  d2:	82 60       	ori	r24, 0x02	; 2
+  d4:	8c 93       	st	X, r24
+	SET_BIT(PORTB,2);
+  d6:	a8 e3       	ldi	r26, 0x38	; 56
+  d8:	b0 e0       	ldi	r27, 0x00	; 0
+  da:	e8 e3       	ldi	r30, 0x38	; 56
+  dc:	f0 e0       	ldi	r31, 0x00	; 0
+  de:	80 81       	ld	r24, Z
+  e0:	84 60       	ori	r24, 0x04	; 4
+  e2:	8c 93       	st	X, r24
+
+	while(1)
+	{
+		if(READ_BIT(PINB,0)==0)SET_BIT(PORTA,0);
+  e4:	e6 e3       	ldi	r30, 0x36	; 54
+  e6:	f0 e0       	ldi	r31, 0x00	; 0
+  e8:	80 81       	ld	r24, Z
+  ea:	88 2f       	mov	r24, r24
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	81 70       	andi	r24, 0x01	; 1
+  f0:	90 70       	andi	r25, 0x00	; 0
+  f2:	00 97       	sbiw	r24, 0x00	; 0
+  f4:	39 f4       	brne	.+14     	; 0x104 <main+0x98>
+  f6:	ab e3       	ldi	r26, 0x3B	; 59
+  f8:	b0 e0       	ldi	r27, 0x00	; 0
+  fa:	eb e3       	ldi	r30, 0x3B	; 59
+  fc:	f0 e0       	ldi	r31, 0x00	; 0
+  fe:	80 81       	ld	r24, Z
+ 100:	81 60       	ori	r24, 0x01	; 1
+ 102:	8c 93       	st	X, r24
+		if(READ_BIT(PINB,0)==1)CLEAR_BIT(PORTA,0);
+ 104:	e6 e3       	ldi	r30, 0x36	; 54
+ 106:	f0 e0       	ldi	r31, 0x00	; 0
+ 108:	80 81       	ld	r24, Z
+ 10a:	88 2f       	mov	r24, r24
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	81 70       	andi	r24, 0x01	; 1
+ 110:	90 70       	andi	r25, 0x00	; 0
+ 112:	88 23       	and	r24, r24
+ 114:	39 f0       	breq	.+14     	; 0x124 <main+0xb8>
+ 116:	ab e3       	ldi	r26, 0x3B	; 59
+ 118:	b0 e0       	ldi	r27, 0x00	; 0
+ 11a:	eb e3       	ldi	r30, 0x3B	; 59
+ 11c:	f0 e0       	ldi	r31, 0x00	; 0
+ 11e:	80 81       	ld	r24, Z
+ 120:	8e 7f       	andi	r24, 0xFE	; 254
+ 122:	8c 93       	st	X, r24
+		if(READ_BIT(PINB,1)==0)SET_BIT(PORTA,1);
+ 124:	e6 e3       	ldi	r30, 0x36	; 54
+ 126:	f0 e0       	ldi	r31, 0x00	; 0
+ 128:	80 81       	ld	r24, Z
+ 12a:	86 95       	lsr	r24
+ 12c:	88 2f       	mov	r24, r24
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+ 130:	81 70       	andi	r24, 0x01	; 1
+ 132:	90 70       	andi	r25, 0x00	; 0
+ 134:	00 97       	sbiw	r24, 0x00	; 0
+ 136:	39 f4       	brne	.+14     	; 0x146 <main+0xda>
+ 138:	ab e3       	ldi	r26, 0x3B	; 59
+ 13a:	b0 e0       	ldi	r27, 0x00	; 0
+ 13c:	eb e3       	ldi	r30, 0x3B	; 59
+ 13e:	f0 e0       	ldi	r31, 0x00	; 0
+ 140:	80 81       	ld	r24, Z
+ 142:	82 60       	ori	r24, 0x02	; 2
+ 144:	8c 93       	st	X, r24
+		if(READ_BIT(PINB,1)==1)CLEAR_BIT(PORTA,1);
+ 146:	e6 e3       	ldi	r30, 0x36	; 54
+ 148:	f0 e0       	ldi	r31, 0x00	; 0
+ 14a:	80 81       	ld	r24, Z
+ 14c:	86 95       	lsr	r24
+ 14e:	88 2f       	mov	r24, r24
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	81 70       	andi	r24, 0x01	; 1
+ 154:	90 70       	andi	r25, 0x00	; 0
+ 156:	88 23       	and	r24, r24
+ 158:	39 f0       	breq	.+14     	; 0x168 <main+0xfc>
+ 15a:	ab e3       	ldi	r26, 0x3B	; 59
+ 15c:	b0 e0       	ldi	r27, 0x00	; 0
+ 15e:	eb e3       	ldi	r30, 0x3B	; 59
+ 160:	f0 e0       	ldi	r31, 0x00	; 0
+ 162:	80 81       	ld	r24, Z
+ 164:	8d 7f       	andi	r24, 0xFD	; 253
+ 166:	8c 93       	st	X, r24
+		if(READ_BIT(PINB,2)==0){SET_BIT(PORTA,0);SET_BIT(PORTA,1);}
+ 168:	e6 e3       	ldi	r30, 0x36	; 54
+ 16a:	f0 e0       	ldi	r31, 0x00	; 0
+ 16c:	80 81       	ld	r24, Z
+ 16e:	86 95       	lsr	r24
+ 170:	86 95       	lsr	r24
+ 172:	88 2f       	mov	r24, r24
+ 174:	90 e0       	ldi	r25, 0x00	; 0
+ 176:	81 70       	andi	r24, 0x01	; 1
+ 178:	90 70       	andi	r25, 0x00	; 0
+ 17a:	00 97       	sbiw	r24, 0x00	; 0
+ 17c:	71 f4       	brne	.+28     	; 0x19a <main+0x12e>
+ 17e:	ab e3       	ldi	r26, 0x3B	; 59
+ 180:	b0 e0       	ldi	r27, 0x00	; 0
+ 182:	eb e3       	ldi	r30, 0x3B	; 59
+ 184:	f0 e0       	ldi	r31, 0x00	; 0
+ 186:	80 81       	ld	r24, Z
+ 188:	81 60       	ori	r24, 0x01	; 1
+ 18a:	8c 93       	st	X, r24
+ 18c:	ab e3       	ldi	r26, 0x3B	; 59
+ 18e:	b0 e0       	ldi	r27, 0x00	; 0
+ 190:	eb e3       	ldi	r30, 0x3B	; 59
+ 192:	f0 e0       	ldi	r31, 0x00	; 0
+ 194:	80 81       	ld	r24, Z
+ 196:	82 60       	ori	r24, 0x02	; 2
+ 198:	8c 93       	st	X, r24
+		if(READ_BIT(PINB,2)==1){CLEAR_BIT(PORTA,0);CLEAR_BIT(PORTA,1);}
+ 19a:	e6 e3       	ldi	r30, 0x36	; 54
+ 19c:	f0 e0       	ldi	r31, 0x00	; 0
+ 19e:	80 81       	ld	r24, Z
+ 1a0:	86 95       	lsr	r24
+ 1a2:	86 95       	lsr	r24
+ 1a4:	88 2f       	mov	r24, r24
+ 1a6:	90 e0       	ldi	r25, 0x00	; 0
+ 1a8:	81 70       	andi	r24, 0x01	; 1
+ 1aa:	90 70       	andi	r25, 0x00	; 0
+ 1ac:	88 23       	and	r24, r24
+ 1ae:	09 f4       	brne	.+2      	; 0x1b2 <main+0x146>
+ 1b0:	99 cf       	rjmp	.-206    	; 0xe4 <main+0x78>
+ 1b2:	ab e3       	ldi	r26, 0x3B	; 59
+ 1b4:	b0 e0       	ldi	r27, 0x00	; 0
+ 1b6:	eb e3       	ldi	r30, 0x3B	; 59
+ 1b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ba:	80 81       	ld	r24, Z
+ 1bc:	8e 7f       	andi	r24, 0xFE	; 254
+ 1be:	8c 93       	st	X, r24
+ 1c0:	ab e3       	ldi	r26, 0x3B	; 59
+ 1c2:	b0 e0       	ldi	r27, 0x00	; 0
+ 1c4:	eb e3       	ldi	r30, 0x3B	; 59
+ 1c6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c8:	80 81       	ld	r24, Z
+ 1ca:	8d 7f       	andi	r24, 0xFD	; 253
+ 1cc:	8c 93       	st	X, r24
+ 1ce:	8a cf       	rjmp	.-236    	; 0xe4 <main+0x78>
+
+000001d0 <_exit>:
+ 1d0:	f8 94       	cli
+
+000001d2 <__stop_program>:
+ 1d2:	ff cf       	rjmp	.-2      	; 0x1d2 <__stop_program>
