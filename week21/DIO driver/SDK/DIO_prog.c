@@ -4,11 +4,12 @@
  *  Created on: Aug 16, 2024
  *      Author: abdullahalazhary
  */
-#include "LIB/Error_State.h"
 #include "LIB/STDtypes.h"
-#include "LIB/BITMATH.h"
 #include "DIO_priv.h"
 #include "DIO_config.h"
+#include "LIB/Error_State.h"
+#include "LIB/BITMATH.h"
+
 
 ES_T DIO_enumPortInit (void)
 {
@@ -230,7 +231,7 @@ ES_T DIO_enumSetPinDirection (u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8Directi
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
+	if (Copy_u8PortID<=DIO_PORTD&& Copy_u8PinID <= DIO_PIN7 && Copy_u8Direction <= OUTPUT)
 	{
 		switch(Copy_u8PortID)
 		{
@@ -264,7 +265,7 @@ ES_T DIO_enumSetPinValue (u8 Copy_u8PortID,u8 Copy_u8PinID,u8 Copy_u8Value)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
+	if (Copy_u8PortID<=DIO_PORTD&&Copy_u8PinID<=DIO_PIN7&&Copy_u8Value<=OUTPUT)
 	{
 		switch(Copy_u8PortID)
 		{
@@ -298,7 +299,7 @@ ES_T DIO_enumTogglePinDirection (u8 Copy_u8PortID,u8 Copy_u8PinID)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
+	if (Copy_u8PortID<=DIO_PORTD&&Copy_u8PinID<=DIO_PIN7)
 	{
 		switch(Copy_u8PortID)
 		{
@@ -328,7 +329,7 @@ ES_T DIO_enumTogglePinValue (u8 Copy_u8PortID,u8 Copy_u8PinID)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
+	if (Copy_u8PortID<=DIO_PORTD&&Copy_u8PinID<=DIO_PIN7)
 	{
 		switch(Copy_u8PortID)
 		{
@@ -358,29 +359,36 @@ ES_T DIO_enumGetPinDirection (u8 Copy_u8PortID,u8 Copy_u8PinID,u8 *Copy_pu8Direc
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
-	{
-		switch(Copy_u8PortID)
+	if (Copy_u8PortID<=DIO_PORTD&&Copy_u8PinID<=DIO_PIN7)
 		{
-			case DIO_PORTA:
-				*Copy_pu8Direction=READ_BIT(DDRA,Copy_u8PinID);
-				break;
-			case DIO_PORTB:
-				*Copy_pu8Direction=READ_BIT(DDRB,Copy_u8PinID);
-				break;
-			case DIO_PORTC:
-				*Copy_pu8Direction=READ_BIT(DDRC,Copy_u8PinID);
-				break;
-			case DIO_PORTD:
-				*Copy_pu8Direction=READ_BIT(DDRD,Copy_u8PinID);
-				break;
+			if (Copy_pu8Direction!=NULL)
+			{
+				switch(Copy_u8PortID)
+				{
+					case DIO_PORTA:
+						*Copy_pu8Direction=READ_BIT(DDRA,Copy_u8PinID);
+						break;
+					case DIO_PORTB:
+						*Copy_pu8Direction=READ_BIT(DDRB,Copy_u8PinID);
+						break;
+					case DIO_PORTC:
+						*Copy_pu8Direction=READ_BIT(DDRC,Copy_u8PinID);
+						break;
+					case DIO_PORTD:
+						*Copy_pu8Direction=READ_BIT(DDRD,Copy_u8PinID);
+						break;
+				}
+				Local_enumErrorState=ES_OK;
+			}
+			else
+			{
+				Local_enumErrorState=ES_NULL_POINTER;
+			}
 		}
-		Local_enumErrorState=ES_OK;
-	}
-	else
-	{
-		Local_enumErrorState=ES_OUT_OF_RANGE;
-	}
+		else
+		{
+			Local_enumErrorState=ES_OUT_OF_RANGE;
+		}
 
 	return Local_enumErrorState;
 }
@@ -388,24 +396,31 @@ ES_T DIO_enumGetPinValue (u8 Copy_u8PortID,u8 Copy_u8PinID,u8 *Copy_pu8Value)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if (Copy_u8PortID<=DIO_PORTD)
+	if (Copy_u8PortID<=DIO_PORTD&&Copy_u8PinID<=DIO_PIN7)
 	{
-		switch(Copy_u8PortID)
+		if (Copy_pu8Value!=NULL)
 		{
-			case DIO_PORTA:
-				*Copy_pu8Value=READ_BIT(PORTA,Copy_u8PinID);
-				break;
-			case DIO_PORTB:
-				*Copy_pu8Value=READ_BIT(PORTB,Copy_u8PinID);
-				break;
-			case DIO_PORTC:
-				*Copy_pu8Value=READ_BIT(PORTC,Copy_u8PinID);
-				break;
-			case DIO_PORTD:
-				*Copy_pu8Value=READ_BIT(PORTD,Copy_u8PinID);
-				break;
+			switch(Copy_u8PortID)
+			{
+				case DIO_PORTA:
+					*Copy_pu8Value=READ_BIT(PINA,Copy_u8PinID);
+					break;
+				case DIO_PORTB:
+					*Copy_pu8Value=READ_BIT(PINB,Copy_u8PinID);
+					break;
+				case DIO_PORTC:
+					*Copy_pu8Value=READ_BIT(PINC,Copy_u8PinID);
+					break;
+				case DIO_PORTD:
+					*Copy_pu8Value=READ_BIT(PIND,Copy_u8PinID);
+					break;
+			}
+			Local_enumErrorState=ES_OK;
 		}
-		Local_enumErrorState=ES_OK;
+		else
+		{
+			Local_enumErrorState=ES_NULL_POINTER;
+		}
 	}
 	else
 	{

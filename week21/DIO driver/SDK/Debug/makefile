@@ -46,7 +46,7 @@ all: DIO.elf secondary-outputs
 DIO.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,DIO.map -mmcu=atmega2561 -o "DIO.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,DIO.map -mmcu=atmega32 -o "DIO.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -64,7 +64,7 @@ DIO.hex: DIO.elf
 
 sizedummy: DIO.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega2561 DIO.elf
+	-avr-size --format=avr --mcu=atmega32 DIO.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

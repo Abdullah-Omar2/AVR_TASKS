@@ -1,12 +1,12 @@
-DIO_prog.o DIO_prog.o: ../DIO_prog.c ../LIB/Error_State.h \
-  ../LIB/STDtypes.h ../LIB/BITMATH.h ../DIO_priv.h ../DIO_config.h
-
-../LIB/Error_State.h:
+DIO_prog.o DIO_prog.o: ../DIO_prog.c ../LIB/STDtypes.h ../DIO_priv.h \
+  ../DIO_config.h ../LIB/Error_State.h ../LIB/BITMATH.h
 
 ../LIB/STDtypes.h:
-
-../LIB/BITMATH.h:
 
 ../DIO_priv.h:
 
 ../DIO_config.h:
+
+../LIB/Error_State.h:
+
+../LIB/BITMATH.h:

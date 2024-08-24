@@ -1,13 +1,13 @@
 Archive member included because of file (symbol)
 
-c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
-                              c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o (exit)
+c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x00000000         0x00100000         xr
-data             0x00800200         0x0000fe00         rw !x
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
 eeprom           0x00810000         0x00010000         rw !x
 fuse             0x00820000         0x00000400         rw !x
 lock             0x00830000         0x00000400         rw !x
@@ -16,13 +16,12 @@ signature        0x00840000         0x00000400         rw !x
 
 Linker script and memory map
 
-Address of section .data set to 0x800200
-LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
+LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
 LOAD ./DIO_prog.o
 LOAD ./main.o
-LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
-LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a
-LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
+LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 
 .hash
  *(.hash)
@@ -114,46 +113,44 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xdb4
+.text           0x00000000      0xd94
  *(.vectors)
- .vectors       0x00000000       0xcc c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
+ .vectors       0x00000000       0x54 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
                 0x00000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
  *(.progmem*)
-                0x000000cc                . = ALIGN (0x2)
-                0x000000cc                __trampolines_start = .
+                0x00000054                . = ALIGN (0x2)
+                0x00000054                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x000000cc        0x0 linker stubs
+ .trampolines   0x00000054        0x0 linker stubs
  *(.trampolines*)
-                0x000000cc                __trampolines_end = .
+                0x00000054                __trampolines_end = .
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000cc                __ctors_start = .
+                0x00000054                __ctors_start = .
  *(.ctors)
-                0x000000cc                __ctors_end = .
-                0x000000cc                __dtors_start = .
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
  *(.dtors)
-                0x000000cc                __dtors_end = .
+                0x00000054                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000cc        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
-                0x000000cc                __init
+ .init0         0x00000054        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000054                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000cc       0x10 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
+ .init2         0x00000054        0xc c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000dc       0x1a c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
-                0x000000dc                __do_copy_data
  *(.init4)
  *(.init5)
  *(.init5)
@@ -164,113 +161,83 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000f6        0x8 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
+ .init9         0x00000060        0x8 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  *(.init9)
  *(.text)
- .text          0x000000fe        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
-                0x000000fe                __vector_38
-                0x000000fe                __vector_22
-                0x000000fe                __vector_28
-                0x000000fe                __vector_1
-                0x000000fe                __vector_32
-                0x000000fe                __vector_34
-                0x000000fe                __vector_24
-                0x000000fe                __vector_12
-                0x000000fe                __vector_46
-                0x000000fe                __bad_interrupt
-                0x000000fe                __vector_6
-                0x000000fe                __vector_31
-                0x000000fe                __vector_35
-                0x000000fe                __vector_39
-                0x000000fe                __vector_3
-                0x000000fe                __vector_23
-                0x000000fe                __vector_30
-                0x000000fe                __vector_45
-                0x000000fe                __vector_25
-                0x000000fe                __vector_11
-                0x000000fe                __vector_13
-                0x000000fe                __vector_17
-                0x000000fe                __vector_19
-                0x000000fe                __vector_7
-                0x000000fe                __vector_49
-                0x000000fe                __vector_41
-                0x000000fe                __vector_43
-                0x000000fe                __vector_27
-                0x000000fe                __vector_5
-                0x000000fe                __vector_33
-                0x000000fe                __vector_47
-                0x000000fe                __vector_37
-                0x000000fe                __vector_4
-                0x000000fe                __vector_44
-                0x000000fe                __vector_9
-                0x000000fe                __vector_2
-                0x000000fe                __vector_21
-                0x000000fe                __vector_15
-                0x000000fe                __vector_36
-                0x000000fe                __vector_29
-                0x000000fe                __vector_40
-                0x000000fe                __vector_8
-                0x000000fe                __vector_26
-                0x000000fe                __vector_48
-                0x000000fe                __vector_14
-                0x000000fe                __vector_10
-                0x000000fe                __vector_50
-                0x000000fe                __vector_16
-                0x000000fe                __vector_18
-                0x000000fe                __vector_20
-                0x000000fe                __vector_42
- .text          0x00000102        0x0 ./DIO_prog.o
- .text          0x00000102        0x0 ./main.o
- .text          0x00000102        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
-                0x00000102                . = ALIGN (0x2)
+ .text          0x00000068        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000068                __vector_1
+                0x00000068                __vector_12
+                0x00000068                __bad_interrupt
+                0x00000068                __vector_6
+                0x00000068                __vector_3
+                0x00000068                __vector_11
+                0x00000068                __vector_13
+                0x00000068                __vector_17
+                0x00000068                __vector_19
+                0x00000068                __vector_7
+                0x00000068                __vector_5
+                0x00000068                __vector_4
+                0x00000068                __vector_9
+                0x00000068                __vector_2
+                0x00000068                __vector_15
+                0x00000068                __vector_8
+                0x00000068                __vector_14
+                0x00000068                __vector_10
+                0x00000068                __vector_16
+                0x00000068                __vector_18
+                0x00000068                __vector_20
+ .text          0x0000006c        0x0 ./DIO_prog.o
+ .text          0x0000006c        0x0 ./main.o
+ .text          0x0000006c        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000006c                . = ALIGN (0x2)
  *(.text.*)
  .text.DIO_enumPortInit
-                0x00000102       0x52 ./DIO_prog.o
-                0x00000102                DIO_enumPortInit
+                0x0000006c       0x52 ./DIO_prog.o
+                0x0000006c                DIO_enumPortInit
  .text.DIO_enumSetPortDirection
-                0x00000154       0x9a ./DIO_prog.o
-                0x00000154                DIO_enumSetPortDirection
+                0x000000be       0x9a ./DIO_prog.o
+                0x000000be                DIO_enumSetPortDirection
  .text.DIO_enumSetPortValue
-                0x000001ee       0x9a ./DIO_prog.o
-                0x000001ee                DIO_enumSetPortValue
+                0x00000158       0x9a ./DIO_prog.o
+                0x00000158                DIO_enumSetPortValue
  .text.DIO_enumTogglePortDirection
-                0x00000288       0xae ./DIO_prog.o
-                0x00000288                DIO_enumTogglePortDirection
+                0x000001f2       0xae ./DIO_prog.o
+                0x000001f2                DIO_enumTogglePortDirection
  .text.DIO_enumTogglePortValue
-                0x00000336       0xae ./DIO_prog.o
-                0x00000336                DIO_enumTogglePortValue
+                0x000002a0       0xae ./DIO_prog.o
+                0x000002a0                DIO_enumTogglePortValue
  .text.DIO_enumGetPortDirection
-                0x000003e4       0xbc ./DIO_prog.o
-                0x000003e4                DIO_enumGetPortDirection
+                0x0000034e       0xbe ./DIO_prog.o
+                0x0000034e                DIO_enumGetPortDirection
  .text.DIO_enumGetPortValue
-                0x000004a0       0xbc ./DIO_prog.o
-                0x000004a0                DIO_enumGetPortValue
+                0x0000040c       0xbe ./DIO_prog.o
+                0x0000040c                DIO_enumGetPortValue
  .text.DIO_enumSetPinDirection
-                0x0000055c      0x1c6 ./DIO_prog.o
-                0x0000055c                DIO_enumSetPinDirection
+                0x000004ca      0x1d8 ./DIO_prog.o
+                0x000004ca                DIO_enumSetPinDirection
  .text.DIO_enumSetPinValue
-                0x00000722      0x1c6 ./DIO_prog.o
-                0x00000722                DIO_enumSetPinValue
+                0x000006a2      0x1d8 ./DIO_prog.o
+                0x000006a2                DIO_enumSetPinValue
  .text.DIO_enumTogglePinDirection
-                0x000008e8      0x114 ./DIO_prog.o
-                0x000008e8                DIO_enumTogglePinDirection
+                0x0000087a      0x11c ./DIO_prog.o
+                0x0000087a                DIO_enumTogglePinDirection
  .text.DIO_enumTogglePinValue
-                0x000009fc      0x114 ./DIO_prog.o
-                0x000009fc                DIO_enumTogglePinValue
+                0x00000996      0x11c ./DIO_prog.o
+                0x00000996                DIO_enumTogglePinValue
  .text.DIO_enumGetPinDirection
-                0x00000b10      0x124 ./DIO_prog.o
-                0x00000b10                DIO_enumGetPinDirection
+                0x00000ab2      0x13c ./DIO_prog.o
+                0x00000ab2                DIO_enumGetPinDirection
  .text.DIO_enumGetPinValue
-                0x00000c34      0x124 ./DIO_prog.o
-                0x00000c34                DIO_enumGetPinValue
- .text.main     0x00000d58       0x58 ./main.o
-                0x00000d58                main
- .text.libgcc   0x00000db0        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
-                0x00000db0                . = ALIGN (0x2)
+                0x00000bee      0x13c ./DIO_prog.o
+                0x00000bee                DIO_enumGetPinValue
+ .text.main     0x00000d2a       0x66 ./main.o
+                0x00000d2a                main
+ .text.libgcc   0x00000d90        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000d90                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000db0        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
-                0x00000db0                exit
-                0x00000db0                _exit
+ .fini9         0x00000d90        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000d90                exit
+                0x00000d90                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -289,44 +256,44 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000db0        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000d90        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000db4                _etext = .
+                0x00000d94                _etext = .
 
-.data           0x00800200        0x0 load address 0x00000db4
-                0x00800200                PROVIDE (__data_start, .)
+.data           0x00800060        0x0 load address 0x00000d94
+                0x00800060                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800200        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
- .data          0x00800200        0x0 ./DIO_prog.o
- .data          0x00800200        0x0 ./main.o
- .data          0x00800200        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 ./DIO_prog.o
+ .data          0x00800060        0x0 ./main.o
+ .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800200                . = ALIGN (0x2)
-                0x00800200                _edata = .
-                0x00800200                PROVIDE (__data_end, .)
+                0x00800060                . = ALIGN (0x2)
+                0x00800060                _edata = .
+                0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800200        0x0
-                0x00800200                PROVIDE (__bss_start, .)
+.bss            0x00800060        0x0
+                0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800200        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2561.o
- .bss           0x00800200        0x0 ./DIO_prog.o
- .bss           0x00800200        0x0 ./main.o
- .bss           0x00800200        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .bss           0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800060        0x0 ./DIO_prog.o
+ .bss           0x00800060        0x0 ./main.o
+ .bss           0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.bss*)
  *(COMMON)
-                0x00800200                PROVIDE (__bss_end, .)
-                0x00000db4                __data_load_start = LOADADDR (.data)
-                0x00000db4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800060                PROVIDE (__bss_end, .)
+                0x00000d94                __data_load_start = LOADADDR (.data)
+                0x00000d94                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800200        0x0
-                0x00800200                PROVIDE (__noinit_start, .)
+.noinit         0x00800060        0x0
+                0x00800060                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800200                PROVIDE (__noinit_end, .)
-                0x00800200                _end = .
-                0x00800200                PROVIDE (__heap_start, .)
+                0x00800060                PROVIDE (__noinit_end, .)
+                0x00800060                _end = .
+                0x00800060                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -344,15 +311,15 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .signature
  *(.signature*)
 
-.stab           0x00000000      0xee8
+.stab           0x00000000      0xf30
  *(.stab)
- .stab          0x00000000      0xd44 ./DIO_prog.o
- .stab          0x00000d44      0x1a4 ./main.o
-                                0x264 (size before relaxing)
+ .stab          0x00000000      0xd74 ./DIO_prog.o
+ .stab          0x00000d74      0x1bc ./main.o
+                                0x27c (size before relaxing)
 
-.stabstr        0x00000000      0x5e7
+.stabstr        0x00000000      0x5df
  *(.stabstr)
- .stabstr       0x00000000      0x5e7 ./DIO_prog.o
+ .stabstr       0x00000000      0x5df ./DIO_prog.o
 
 .stab.excl
  *(.stab.excl)

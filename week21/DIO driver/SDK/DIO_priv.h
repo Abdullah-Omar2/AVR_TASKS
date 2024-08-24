@@ -23,20 +23,20 @@
 #define DIO_PIN7 	7
 
 #define PINA		*((volatile u8*)0x39)
-#define DDRA 		*((volatile u8*)0x3A)
-#define PORTA 		*((volatile u8*)0x3B)
+#define DDRA 		*((u8*)0x3A)
+#define PORTA 		*((u8*)0x3B)
 
 #define PINB 		*((volatile u8*)0x36)
-#define DDRB 		*((volatile u8*)0x37)
-#define PORTB 		*((volatile u8*)0x38)
+#define DDRB 		*((u8*)0x37)
+#define PORTB 		*((u8*)0x38)
 
 #define PINC 		*((volatile u8*)0x33)
-#define DDRC 		*((volatile u8*)0x34)
-#define PORTC 		*((volatile u8*)0x35)
+#define DDRC 		*((u8*)0x34)
+#define PORTC 		*((u8*)0x35)
 
 #define PIND 		*((volatile u8*)0x30)
-#define DDRD 		*((volatile u8*)0x31)
-#define PORTD 		*((volatile u8*)0x32)
+#define DDRD 		*((u8*)0x31)
+#define PORTD 		*((u8*)0x32)
 
 #define INPUT		0
 #define OUTPUT 		1

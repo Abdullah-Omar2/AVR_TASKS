@@ -12,9 +12,11 @@
 
 #ifndef DIO_INIT_H_
 #define DIO_INIT_H_
+
 #include "LIB/Error_State.h"
 #include "LIB/STDtypes.h"
 #include "DIO_priv.h"
+
 
 ES_T DIO_enumPortInit (void);
 
