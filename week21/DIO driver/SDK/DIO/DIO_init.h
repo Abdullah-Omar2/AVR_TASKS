@@ -6,8 +6,8 @@
  */
 
 //Copy_u8PortID: DIO_PORTA or DIO_PORTB or DIO_PORTC or DIO_PORTD
-//Copy_u8Direction: INPUT or OUTPUT
-//Copy_u8Value: HIGH or LOW for INPUT & FLOAT or PULL_UP for OUTPUT
+//Copy_u8Direction: INPUT or OUTPUT for Pin & from 0 to 255 for Port
+//Copy_u8Value: (HIGH or LOW for INPUT & FLOAT or PULL_UP for OUTPUT) for Pin & (from 0 to 255 for INPUT or OUTPUT) for Port
 //Copy_u8PinID: DIO_PIN0 or DIO_PIN1 or DIO_PIN2 or DIO_PIN3 or DIO_PIN4 or DIO_PIN5 or DIO_PIN6 or DIO_PIN7
 
 #ifndef DIO_INIT_H_
