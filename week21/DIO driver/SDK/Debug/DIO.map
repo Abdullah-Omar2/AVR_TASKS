@@ -311,15 +311,15 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .signature
  *(.signature*)
 
-.stab           0x00000000      0xf48
+.stab           0x00000000      0xf0c
  *(.stab)
  .stab          0x00000000      0xd74 ./src/DIO_prog.o
- .stab          0x00000d74      0x1d4 ./src/main.o
-                                0x270 (size before relaxing)
+ .stab          0x00000d74      0x198 ./src/main.o
+                                0x258 (size before relaxing)
 
-.stabstr        0x00000000      0x6ba
+.stabstr        0x00000000      0x5f7
  *(.stabstr)
- .stabstr       0x00000000      0x6ba ./src/DIO_prog.o
+ .stabstr       0x00000000      0x5f7 ./src/DIO_prog.o
 
 .stab.excl
  *(.stab.excl)

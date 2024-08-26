@@ -5,6 +5,7 @@
  *      Author: abdullahalazhary
  */
 #include "../include/LIB/STDtypes.h"
+#include "../include/LIB/Error_State.h"
 #include "../include/MCAL/DIO/DIO_int.h"
 
 

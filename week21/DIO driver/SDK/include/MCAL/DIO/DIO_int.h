@@ -16,9 +16,7 @@
 #ifndef DIO_INIT_H_
 #define DIO_INIT_H_
 
-#include "/Users/abdullahalazhary/STARKS/SDK_workspace/DIO/include/LIB/Error_State.h"
 #include "DIO_priv.h"
-
 
 ES_T DIO_enumPortInit (void);
 
