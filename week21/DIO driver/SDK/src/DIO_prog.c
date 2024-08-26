@@ -4,11 +4,11 @@
  *  Created on: Aug 16, 2024
  *      Author: abdullahalazhary
  */
-#include "LIB/STDtypes.h"
-#include "DIO_priv.h"
-#include "DIO_config.h"
-#include "LIB/Error_State.h"
-#include "LIB/BITMATH.h"
+#include "../include/LIB/STDtypes.h"
+#include "../include/MCAL/DIO/DIO_priv.h"
+#include "../include/MCAL/DIO/DIO_config.h"
+#include "../include/LIB/Error_State.h"
+#include "../include/LIB/BITMATH.h"
 
 
 ES_T DIO_enumPortInit (void)

@@ -3,11 +3,11 @@ DIO.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000d94  00000000  00000000  00000054  2**1
+  0 .text         00000d8a  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .stab         00000f30  00000000  00000000  00000de8  2**2
+  1 .stab         00000f48  00000000  00000000  00000de0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  2 .stabstr      000005df  00000000  00000000  00001d18  2**0
+  2 .stabstr      000006ba  00000000  00000000  00001d28  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -43,14 +43,14 @@ Disassembly of section .text:
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
   60:	0e 94 95 06 	call	0xd2a	; 0xd2a <main>
-  64:	0c 94 c8 06 	jmp	0xd90	; 0xd90 <_exit>
+  64:	0c 94 c3 06 	jmp	0xd86	; 0xd86 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 0000006c <DIO_enumPortInit>:
-#include "LIB/Error_State.h"
-#include "LIB/BITMATH.h"
+#include "../include/LIB/Error_State.h"
+#include "../include/LIB/BITMATH.h"
 
 
 ES_T DIO_enumPortInit (void)
@@ -2128,8 +2128,8 @@ ES_T DIO_enumGetPinValue (u8 Copy_u8PortID,u8 Copy_u8PinID,u8 *Copy_pu8Value)
  d28:	08 95       	ret
 
 00000d2a <main>:
-#include "DIO_init.h"
-#include "LIB/STDtypes.h"
+#include "../include/LIB/STDtypes.h"
+#include "../include/MCAL/DIO/DIO_int.h"
 
 
 int main (void)
@@ -2141,6 +2141,7 @@ int main (void)
  d32:	de b7       	in	r29, 0x3e	; 62
 	DIO_enumPortInit ();
  d34:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_enumPortInit>
+
 	DIO_enumSetPinDirection (DIO_PORTA,DIO_PIN0,INPUT);
  d38:	80 e0       	ldi	r24, 0x00	; 0
  d3a:	60 e0       	ldi	r22, 0x00	; 0
@@ -2151,53 +2152,48 @@ int main (void)
  d44:	60 e0       	ldi	r22, 0x00	; 0
  d46:	41 e0       	ldi	r20, 0x01	; 1
  d48:	0e 94 65 02 	call	0x4ca	; 0x4ca <DIO_enumSetPinDirection>
+
 	DIO_enumSetPinValue (DIO_PORTA,DIO_PIN0,PULL_UP);
  d4c:	80 e0       	ldi	r24, 0x00	; 0
  d4e:	60 e0       	ldi	r22, 0x00	; 0
  d50:	41 e0       	ldi	r20, 0x01	; 1
  d52:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
-	DIO_enumSetPinValue (DIO_PORTC,DIO_PIN0,HIGH);
- d56:	82 e0       	ldi	r24, 0x02	; 2
- d58:	60 e0       	ldi	r22, 0x00	; 0
- d5a:	41 e0       	ldi	r20, 0x01	; 1
- d5c:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
-	u8 button=0;
- d60:	19 82       	std	Y+1, r1	; 0x01
 
+	u8 button=0;
+ d56:	19 82       	std	Y+1, r1	; 0x01
 	while (1)
 	{
 		DIO_enumGetPinValue (DIO_PORTA,DIO_PIN0,&button);
- d62:	80 e0       	ldi	r24, 0x00	; 0
- d64:	60 e0       	ldi	r22, 0x00	; 0
- d66:	9e 01       	movw	r18, r28
- d68:	2f 5f       	subi	r18, 0xFF	; 255
- d6a:	3f 4f       	sbci	r19, 0xFF	; 255
- d6c:	a9 01       	movw	r20, r18
- d6e:	0e 94 f7 05 	call	0xbee	; 0xbee <DIO_enumGetPinValue>
+ d58:	80 e0       	ldi	r24, 0x00	; 0
+ d5a:	60 e0       	ldi	r22, 0x00	; 0
+ d5c:	9e 01       	movw	r18, r28
+ d5e:	2f 5f       	subi	r18, 0xFF	; 255
+ d60:	3f 4f       	sbci	r19, 0xFF	; 255
+ d62:	a9 01       	movw	r20, r18
+ d64:	0e 94 f7 05 	call	0xbee	; 0xbee <DIO_enumGetPinValue>
 		if (button==0)
- d72:	89 81       	ldd	r24, Y+1	; 0x01
- d74:	88 23       	and	r24, r24
- d76:	31 f4       	brne	.+12     	; 0xd84 <main+0x5a>
+ d68:	89 81       	ldd	r24, Y+1	; 0x01
+ d6a:	88 23       	and	r24, r24
+ d6c:	31 f4       	brne	.+12     	; 0xd7a <main+0x50>
 		{
-
 			DIO_enumSetPinValue (DIO_PORTC,DIO_PIN0,HIGH);
- d78:	82 e0       	ldi	r24, 0x02	; 2
- d7a:	60 e0       	ldi	r22, 0x00	; 0
- d7c:	41 e0       	ldi	r20, 0x01	; 1
- d7e:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
- d82:	ef cf       	rjmp	.-34     	; 0xd62 <main+0x38>
+ d6e:	82 e0       	ldi	r24, 0x02	; 2
+ d70:	60 e0       	ldi	r22, 0x00	; 0
+ d72:	41 e0       	ldi	r20, 0x01	; 1
+ d74:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
+ d78:	ef cf       	rjmp	.-34     	; 0xd58 <main+0x2e>
 		}
 		else
 		{
 			DIO_enumSetPinValue (DIO_PORTC,DIO_PIN0,LOW);
- d84:	82 e0       	ldi	r24, 0x02	; 2
- d86:	60 e0       	ldi	r22, 0x00	; 0
- d88:	40 e0       	ldi	r20, 0x00	; 0
- d8a:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
- d8e:	e9 cf       	rjmp	.-46     	; 0xd62 <main+0x38>
+ d7a:	82 e0       	ldi	r24, 0x02	; 2
+ d7c:	60 e0       	ldi	r22, 0x00	; 0
+ d7e:	40 e0       	ldi	r20, 0x00	; 0
+ d80:	0e 94 51 03 	call	0x6a2	; 0x6a2 <DIO_enumSetPinValue>
+ d84:	e9 cf       	rjmp	.-46     	; 0xd58 <main+0x2e>
 
-00000d90 <_exit>:
- d90:	f8 94       	cli
+00000d86 <_exit>:
+ d86:	f8 94       	cli
 
-00000d92 <__stop_program>:
- d92:	ff cf       	rjmp	.-2      	; 0xd92 <__stop_program>
+00000d88 <__stop_program>:
+ d88:	ff cf       	rjmp	.-2      	; 0xd88 <__stop_program>

@@ -4,8 +4,8 @@
  *  Created on: Aug 21, 2024
  *      Author: abdullahalazhary
  */
-#include "DIO/DIO_init.h"
-#include "LIB/STDtypes.h"
+#include "../include/LIB/STDtypes.h"
+#include "../include/MCAL/DIO/DIO_int.h"
 
 
 int main (void)
