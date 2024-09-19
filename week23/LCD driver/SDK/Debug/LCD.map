@@ -160,7 +160,7 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x5be2
+.text           0x00000000     0x6058
  *(.vectors)
  .vectors       0x00000000       0x54 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -331,85 +331,85 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
                 0x000025ba       0x22 ./src/LCD_prog.o
                 0x000025ba                LCD_enumSendChar
  .text.LCD_inlenumSendChar
-                0x000025dc      0x1ac ./src/LCD_prog.o
+                0x000025dc      0x18e ./src/LCD_prog.o
  .text.LCD_enumSendCommand
-                0x00002788       0x22 ./src/LCD_prog.o
-                0x00002788                LCD_enumSendCommand
+                0x0000276a       0x22 ./src/LCD_prog.o
+                0x0000276a                LCD_enumSendCommand
  .text.LCD_enumSendString
-                0x000027aa       0x2a ./src/LCD_prog.o
-                0x000027aa                LCD_enumSendString
+                0x0000278c       0x2a ./src/LCD_prog.o
+                0x0000278c                LCD_enumSendString
  .text.LCD_inlenumSendString
-                0x000027d4       0x66 ./src/LCD_prog.o
+                0x000027b6       0x66 ./src/LCD_prog.o
  .text.LCD_enumGoTOPosition
-                0x0000283a       0x90 ./src/LCD_prog.o
-                0x0000283a                LCD_enumGoTOPosition
+                0x0000281c       0x90 ./src/LCD_prog.o
+                0x0000281c                LCD_enumGoTOPosition
  .text.LCD_enumDisplayIntNum
-                0x000028ca       0x4c ./src/LCD_prog.o
-                0x000028ca                LCD_enumDisplayIntNum
+                0x000028ac       0x4c ./src/LCD_prog.o
+                0x000028ac                LCD_enumDisplayIntNum
  .text.LCD_inlenumDisplayIntNum
-                0x00002916      0x148 ./src/LCD_prog.o
+                0x000028f8      0x148 ./src/LCD_prog.o
  .text.LCD_enumDisplayFloatNum
-                0x00002a5e      0x194 ./src/LCD_prog.o
-                0x00002a5e                LCD_enumDisplayFloatNum
+                0x00002a40      0x194 ./src/LCD_prog.o
+                0x00002a40                LCD_enumDisplayFloatNum
  .text.LCD_enumSendCustomChar
-                0x00002bf2       0x52 ./src/LCD_prog.o
-                0x00002bf2                LCD_enumSendCustomChar
+                0x00002bd4       0xb8 ./src/LCD_prog.o
+                0x00002bd4                LCD_enumSendCustomChar
  .text.LCD_enumClear
-                0x00002c44       0x16 ./src/LCD_prog.o
-                0x00002c44                LCD_enumClear
+                0x00002c8c       0x1e ./src/LCD_prog.o
+                0x00002c8c                LCD_enumClear
  .text.LED_enumInit
-                0x00002c5a      0x276 ./src/LED_prog.o
-                0x00002c5a                LED_enumInit
+                0x00002caa      0x276 ./src/LED_prog.o
+                0x00002caa                LED_enumInit
  .text.LED_enumLedOn
-                0x00002ed0       0x76 ./src/LED_prog.o
-                0x00002ed0                LED_enumLedOn
+                0x00002f20       0x76 ./src/LED_prog.o
+                0x00002f20                LED_enumLedOn
  .text.LED_enumLedOff
-                0x00002f46       0x76 ./src/LED_prog.o
-                0x00002f46                LED_enumLedOff
+                0x00002f96       0x76 ./src/LED_prog.o
+                0x00002f96                LED_enumLedOff
  .text.SEV_SEG_enumInit
-                0x00002fbc      0xffc ./src/SEV_SEG_prog.o
-                0x00002fbc                SEV_SEG_enumInit
+                0x0000300c      0xffc ./src/SEV_SEG_prog.o
+                0x0000300c                SEV_SEG_enumInit
  .text.SEV_SEG_enumNUMDisplay
-                0x00003fb8      0x8c6 ./src/SEV_SEG_prog.o
-                0x00003fb8                SEV_SEG_enumNUMDisplay
+                0x00004008      0x8c6 ./src/SEV_SEG_prog.o
+                0x00004008                SEV_SEG_enumNUMDisplay
  .text.SEV_SEG_enumCMNEnable
-                0x0000487e      0x212 ./src/SEV_SEG_prog.o
-                0x0000487e                SEV_SEG_enumCMNEnable
+                0x000048ce      0x212 ./src/SEV_SEG_prog.o
+                0x000048ce                SEV_SEG_enumCMNEnable
  .text.SEV_SEG_enumCMNDisable
-                0x00004a90      0x212 ./src/SEV_SEG_prog.o
-                0x00004a90                SEV_SEG_enumCMNDisable
+                0x00004ae0      0x212 ./src/SEV_SEG_prog.o
+                0x00004ae0                SEV_SEG_enumCMNDisable
  .text.SEV_SEG_enumDOTEnable
-                0x00004ca2      0x212 ./src/SEV_SEG_prog.o
-                0x00004ca2                SEV_SEG_enumDOTEnable
+                0x00004cf2      0x212 ./src/SEV_SEG_prog.o
+                0x00004cf2                SEV_SEG_enumDOTEnable
  .text.SEV_SEG_enumDOTDisable
-                0x00004eb4      0x212 ./src/SEV_SEG_prog.o
-                0x00004eb4                SEV_SEG_enumDOTDisable
+                0x00004f04      0x212 ./src/SEV_SEG_prog.o
+                0x00004f04                SEV_SEG_enumDOTDisable
  .text.SEV_SEG_enumSEGClear
-                0x000050c6      0x8d8 ./src/SEV_SEG_prog.o
-                0x000050c6                SEV_SEG_enumSEGClear
+                0x00005116      0x8d8 ./src/SEV_SEG_prog.o
+                0x00005116                SEV_SEG_enumSEGClear
  .text.SW_enumSwitchsInit
-                0x0000599e       0xec ./src/SW_prog.o
-                0x0000599e                SW_enumSwitchsInit
+                0x000059ee       0xec ./src/SW_prog.o
+                0x000059ee                SW_enumSwitchsInit
  .text.SW_enumSwitchGetState
-                0x00005a8a       0x5a ./src/SW_prog.o
-                0x00005a8a                SW_enumSwitchGetState
- .text.main     0x00005ae4       0x12 ./src/main.o
-                0x00005ae4                main
- .text.libgcc   0x00005af6       0x36 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
-                0x00005af6                __divmodsi4
- .text.libgcc   0x00005b2c        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00005b2c        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00005b2c       0x44 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x00005b2c                __udivmodsi4
- .text.libgcc   0x00005b70       0x38 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00005b70                __prologue_saves__
- .text.libgcc   0x00005ba8       0x36 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00005ba8                __epilogue_restores__
-                0x00005bde                . = ALIGN (0x2)
+                0x00005ada       0x5a ./src/SW_prog.o
+                0x00005ada                SW_enumSwitchGetState
+ .text.main     0x00005b34      0x438 ./src/main.o
+                0x00005b34                main
+ .text.libgcc   0x00005f6c       0x36 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                0x00005f6c                __divmodsi4
+ .text.libgcc   0x00005fa2        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00005fa2        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00005fa2       0x44 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00005fa2                __udivmodsi4
+ .text.libgcc   0x00005fe6       0x38 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00005fe6                __prologue_saves__
+ .text.libgcc   0x0000601e       0x36 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x0000601e                __epilogue_restores__
+                0x00006054                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00005bde        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00005bde                exit
-                0x00005bde                _exit
+ .fini9         0x00006054        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00006054                exit
+                0x00006054                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -428,11 +428,11 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00005bde        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00006054        0x4 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00005be2                _etext = .
+                0x00006058                _etext = .
 
-.data           0x00800060      0x15e load address 0x00005be2
+.data           0x00800060      0x196 load address 0x00006058
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -444,98 +444,109 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
  .data          0x00800060        0x0 ./src/SEV_SEG_prog.o
  .data          0x00800060        0x0 ./src/SW_config.o
  .data          0x00800060        0x0 ./src/SW_prog.o
- .data          0x00800060        0x0 ./src/main.o
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_si_to_sf.o)
- .data          0x00800060        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .data          0x00800060        0x8 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
-                0x00800060                __thenan_sf
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .data          0x00800068        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
- .data          0x00800068      0x100 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
-                0x00800068                __clz_tab
+ .data          0x00800060        0x9 ./src/main.o
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_si_to_sf.o)
+ .data          0x00800069        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .data          0x00800069        0x8 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+                0x00800069                __thenan_sf
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .data          0x00800071        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x00800071      0x100 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
+                0x00800071                __clz_tab
  *(.data*)
  .data.LED_AstrLeds
-                0x00800168        0xc ./src/LED_config.o
-                0x00800168                LED_AstrLeds
+                0x00800171        0xc ./src/LED_config.o
+                0x00800171                LED_AstrLeds
  .data.SEV_SEG_Au8NumDisplay
-                0x00800174       0x10 ./src/SEV_SEG_config.o
+                0x0080017d       0x10 ./src/SEV_SEG_config.o
  .data.SEV_SEG_AstrSegments
-                0x00800184       0x26 ./src/SEV_SEG_config.o
-                0x00800184                SEV_SEG_AstrSegments
+                0x0080018d       0x26 ./src/SEV_SEG_config.o
+                0x0080018d                SEV_SEG_AstrSegments
  .data.SEV_SEG_Au8NumDisplay
-                0x008001aa       0x10 ./src/SEV_SEG_prog.o
+                0x008001b3       0x10 ./src/SEV_SEG_prog.o
  .data.SWITCH_AstrSwitchs
-                0x008001ba        0x3 ./src/SW_config.o
-                0x008001ba                SWITCH_AstrSwitchs
+                0x008001c3        0x3 ./src/SW_config.o
+                0x008001c3                SWITCH_AstrSwitchs
  *(.rodata)
  *(.rodata*)
+ .rodata.C.5.1349
+                0x008001c6        0x8 ./src/main.o
+ .rodata.C.4.1348
+                0x008001ce        0x8 ./src/main.o
+ .rodata.C.3.1347
+                0x008001d6        0x8 ./src/main.o
+ .rodata.C.2.1346
+                0x008001de        0x8 ./src/main.o
+ .rodata.C.1.1345
+                0x008001e6        0x8 ./src/main.o
+ .rodata.C.0.1344
+                0x008001ee        0x8 ./src/main.o
  *(.gnu.linkonce.d*)
-                0x008001be                . = ALIGN (0x2)
- *fill*         0x008001bd        0x1 00
-                0x008001be                _edata = .
-                0x008001be                PROVIDE (__data_end, .)
+                0x008001f6                . = ALIGN (0x2)
+                0x008001f6                _edata = .
+                0x008001f6                PROVIDE (__data_end, .)
 
-.bss            0x008001be        0x0
-                0x008001be                PROVIDE (__bss_start, .)
+.bss            0x008001f6        0x0
+                0x008001f6                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x008001be        0x0 ./src/DIO_prog.o
- .bss           0x008001be        0x0 ./src/LCD_prog.o
- .bss           0x008001be        0x0 ./src/LED_config.o
- .bss           0x008001be        0x0 ./src/LED_prog.o
- .bss           0x008001be        0x0 ./src/SEV_SEG_config.o
- .bss           0x008001be        0x0 ./src/SEV_SEG_prog.o
- .bss           0x008001be        0x0 ./src/SW_config.o
- .bss           0x008001be        0x0 ./src/SW_prog.o
- .bss           0x008001be        0x0 ./src/main.o
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_si_to_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
- .bss           0x008001be        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x008001f6        0x0 ./src/DIO_prog.o
+ .bss           0x008001f6        0x0 ./src/LCD_prog.o
+ .bss           0x008001f6        0x0 ./src/LED_config.o
+ .bss           0x008001f6        0x0 ./src/LED_prog.o
+ .bss           0x008001f6        0x0 ./src/SEV_SEG_config.o
+ .bss           0x008001f6        0x0 ./src/SEV_SEG_prog.o
+ .bss           0x008001f6        0x0 ./src/SW_config.o
+ .bss           0x008001f6        0x0 ./src/SW_prog.o
+ .bss           0x008001f6        0x0 ./src/main.o
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_si_to_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x008001f6        0x0 c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
  *(.bss*)
  *(COMMON)
-                0x008001be                PROVIDE (__bss_end, .)
-                0x00005be2                __data_load_start = LOADADDR (.data)
-                0x00005d40                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008001f6                PROVIDE (__bss_end, .)
+                0x00006058                __data_load_start = LOADADDR (.data)
+                0x000061ee                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008001be        0x0
-                0x008001be                PROVIDE (__noinit_start, .)
+.noinit         0x008001f6        0x0
+                0x008001f6                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008001be                PROVIDE (__noinit_end, .)
-                0x008001be                _end = .
-                0x008001be                PROVIDE (__heap_start, .)
+                0x008001f6                PROVIDE (__noinit_end, .)
+                0x008001f6                _end = .
+                0x008001f6                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -553,29 +564,29 @@ LOAD c:/users/abdullahalazhary/starks/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x3ae0
+.stab           0x00000000     0x3d68
  *(.stab)
  .stab          0x00000000      0xd5c ./src/DIO_prog.o
- .stab          0x00000d5c     0x1500 ./src/LCD_prog.o
-                               0x15a8 (size before relaxing)
- .stab          0x0000225c      0x120 ./src/LED_config.o
+ .stab          0x00000d5c     0x156c ./src/LCD_prog.o
+                               0x1614 (size before relaxing)
+ .stab          0x000022c8      0x120 ./src/LED_config.o
                                 0x1c8 (size before relaxing)
- .stab          0x0000237c      0x3f0 ./src/LED_prog.o
+ .stab          0x000023e8      0x3f0 ./src/LED_prog.o
                                 0x4b0 (size before relaxing)
- .stab          0x0000276c      0x12c ./src/SEV_SEG_config.o
+ .stab          0x000027d8      0x12c ./src/SEV_SEG_config.o
                                 0x1d4 (size before relaxing)
- .stab          0x00002898      0xd74 ./src/SEV_SEG_prog.o
+ .stab          0x00002904      0xd74 ./src/SEV_SEG_prog.o
                                 0xe34 (size before relaxing)
- .stab          0x0000360c      0x120 ./src/SW_config.o
+ .stab          0x00003678      0x120 ./src/SW_config.o
                                 0x1c8 (size before relaxing)
- .stab          0x0000372c      0x270 ./src/SW_prog.o
+ .stab          0x00003798      0x270 ./src/SW_prog.o
                                 0x330 (size before relaxing)
- .stab          0x0000399c      0x144 ./src/main.o
-                                0x378 (size before relaxing)
+ .stab          0x00003a08      0x360 ./src/main.o
+                                0x594 (size before relaxing)
 
-.stabstr        0x00000000     0x14c1
+.stabstr        0x00000000     0x1558
  *(.stabstr)
- .stabstr       0x00000000     0x14c1 ./src/DIO_prog.o
+ .stabstr       0x00000000     0x1558 ./src/DIO_prog.o
 
 .stab.excl
  *(.stab.excl)

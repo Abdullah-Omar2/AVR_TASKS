@@ -24,7 +24,7 @@ ES_T LCD_enumDisplayIntNum(s64 Copy_s64Num);
 
 ES_T LCD_enumDisplayFloatNum(f32 Copy_u8Num);
 
-ES_T LCD_enumSendCustomChar(u8* Copy_pu8Char);
+ES_T LCD_enumSendCustomChar(u8 Copy_u8Pos,u8* Copy_pu8Char);
 
 ES_T LCD_enumClear(void);
 

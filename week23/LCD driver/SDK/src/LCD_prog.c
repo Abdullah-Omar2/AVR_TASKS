@@ -184,75 +184,66 @@ static inline ES_T LCD_inlenumSendChar(u8 Copy_u8Char)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-	if ((Copy_u8Char>=' '&&Copy_u8Char<=0b01111111)||(Copy_u8Char>=0b10100001&&Copy_u8Char<=0b11111111))
-	{
-
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_RS_PORT,LCD_RS_PIN,HIGH);
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_EN_PORT,LCD_EN_PIN,LOW);
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_RW_PORT,LCD_RW_PIN,LOW);
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_RS_PORT,LCD_RS_PIN,HIGH);
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_EN_PORT,LCD_EN_PIN,LOW);
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_RW_PORT,LCD_RW_PIN,LOW);
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
 #if LCD_MODE == EIGHT_BIT
 
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,7));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,6));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,5));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,4));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D3_PORT,LCD_D3_PIN,READ_BIT(Copy_u8Char,3));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D2_PORT,LCD_D2_PIN,READ_BIT(Copy_u8Char,2));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D1_PORT,LCD_D1_PIN,READ_BIT(Copy_u8Char,1));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D0_PORT,LCD_D0_PIN,READ_BIT(Copy_u8Char,0));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,7));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,6));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,5));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,4));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D3_PORT,LCD_D3_PIN,READ_BIT(Copy_u8Char,3));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D2_PORT,LCD_D2_PIN,READ_BIT(Copy_u8Char,2));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D1_PORT,LCD_D1_PIN,READ_BIT(Copy_u8Char,1));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D0_PORT,LCD_D0_PIN,READ_BIT(Copy_u8Char,0));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
-		Local_enumErrorState=LCD_inlenumLatch();
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=LCD_inlenumLatch();
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
 #elif LCD_MODE == FOUR_BIT
 
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,7));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,6));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,5));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,4));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,7));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,6));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,5));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,4));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
-		Local_enumErrorState=LCD_inlenumLatch();
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=LCD_inlenumLatch();
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,3));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,2));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,1));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
-		Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,0));
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D7_PORT,LCD_D7_PIN,READ_BIT(Copy_u8Char,3));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D6_PORT,LCD_D6_PIN,READ_BIT(Copy_u8Char,2));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D5_PORT,LCD_D5_PIN,READ_BIT(Copy_u8Char,1));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=DIO_enumSetPinValue(LCD_D4_PORT,LCD_D4_PIN,READ_BIT(Copy_u8Char,0));
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
-		Local_enumErrorState=LCD_inlenumLatch();
-		if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+	Local_enumErrorState=LCD_inlenumLatch();
+	if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
 
 #else
 
 #error"wrong LCD_MODE"
 
 #endif
-		Local_enumErrorState=ES_OK;
-	}
-	else
-	{
-		Local_enumErrorState=ES_OUT_OF_RANGE;
-	}
 
 	return Local_enumErrorState;
 }
@@ -410,20 +401,38 @@ ES_T LCD_enumDisplayFloatNum(f32 Copy_f32Num)
 	return Local_enumErrorState;
 }
 
-ES_T LCD_enumSendCustomChar(u8* Copy_pu8Char)
+ES_T LCD_enumSendCustomChar(u8 Copy_u8Pos,u8* Copy_pu8Char)
 {
+
 	ES_T Local_enumErrorState=ES_NOK;
 
-	LCD_inlenumSendCommand(0x40);
-
-	while(*Copy_pu8Char != 0)
+	if (Copy_pu8Char!=NULL)
 	{
-		LCD_inlenumSendChar(*Copy_pu8Char);
-		Copy_pu8Char++;
-	}
+		if(Copy_u8Pos<=7&&Copy_u8Pos>=0)
+		{
+			u8 Local_u8Counter=0;
 
-	LCD_inlenumSendCommand(0x80);
-	LCD_enumSendChar(0);
+			Local_enumErrorState=LCD_inlenumSendCommand(0x40+Copy_u8Pos*8);
+			if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+
+			for (Local_u8Counter=0;Local_u8Counter< 8;Local_u8Counter++)
+			{
+				Local_enumErrorState=LCD_inlenumSendChar(Copy_pu8Char[Local_u8Counter]);
+				if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+			}
+
+			Local_enumErrorState=LCD_inlenumSendCommand(0x80);
+			if(Local_enumErrorState!=ES_OK)return Local_enumErrorState;
+		}
+		else
+		{
+			Local_enumErrorState=ES_OUT_OF_RANGE;
+		}
+	}
+	else
+	{
+		Local_enumErrorState=ES_NULL_POINTER;
+	}
 
 	return Local_enumErrorState;
 }
@@ -432,7 +441,7 @@ ES_T LCD_enumClear(void)
 {
 	ES_T Local_enumErrorState=ES_NOK;
 
-
+	Local_enumErrorState=LCD_inlenumSendCommand(0x01);
 
 	return Local_enumErrorState;
 }

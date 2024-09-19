@@ -11,8 +11,6 @@
 #define EIGHT_BIT 0
 #define FOUR_BIT 1
 
-#define NOT_CONNECTED 8
-
 static inline ES_T LCD_inlenumSendCommand(u8 Copy_u8Command);
 
 static inline ES_T LCD_inlenumLatch(void);
